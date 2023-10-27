@@ -14,8 +14,12 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import Stack from "@mui/material/Stack";
-
+import MessageIcon from '@mui/icons-material/Message';
+import GroupsIcon from '@mui/icons-material/Groups';
+import EventAvailableRoundedIcon from '@mui/icons-material/EventAvailableRounded';
+import QuestionAnswerOutlinedIcon from '@mui/icons-material/QuestionAnswerOutlined';
+import AppRegistrationRoundedIcon from '@mui/icons-material/AppRegistrationRounded';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -161,64 +165,95 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "#ffa500", height: "75px", borderBottomLeftRadius: 30, borderBottomRightRadius: 30}}>
         <Toolbar>
+        <img src="https://cdn-icons-png.flaticon.com/512/656/656579.png" alt="imagem" style={{width: '70px', height: '71px', padding: 20}}></img>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ display: { xs: "none", sm: "block", fontSize: 25, fontWeight: 'bold' } }}
           >
-            Access Control
+            Netciso
           </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon/>
             </SearchIconWrapper>
             <StyledInputBase
-            sx={{ Color: "#000" }}
+            sx={{ Color: "#fff", width: '250px' }}
               placeholder="Pesquisar…"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          <div>
+          </div>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <MailIcon sx={{ fontSize: 35 }} />
-                <p style={{ margin: 0, marginTop: 0, fontSize: '17px' }}>E-mail</p>
-                </div>
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
+          <div style={{ display: "flex" }}>
+          <IconButton>
+            <Badge color="error">
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <NotificationsIcon sx={{ fontSize: 35, marginBottom: 0 }} />
-                <p style={{ margin: 0, marginTop: 0, fontSize: '17px' }}>Notificações</p>
+                <HomeRoundedIcon sx={{ fontSize: 30, color: 'white' }} />
+                <p style={{ margin: 0, fontSize: '17px', marginTop: 5, color: 'white' }}>Início</p>
               </div>
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
+            </Badge>
+          </IconButton>
+          <IconButton>
+            <Badge color="error">
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <GroupsIcon sx={{ fontSize: 30, color: 'white' }} />
+                <p style={{ margin: 0, fontSize: '17px', marginTop: 5, color: 'white' }}>Comunidade</p>
+              </div>
+            </Badge>
+          </IconButton>
+          <IconButton>
+            <Badge color="error">
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <QuestionAnswerOutlinedIcon sx={{ fontSize: 30, color: 'white' }} />
+                <p style={{ margin: 0, fontSize: '17px', marginTop: 5, color: 'white' }}>Discussões</p>
+              </div>
+            </Badge>
+          </IconButton>
+          <IconButton>
+            <Badge color="error">
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <EventAvailableRoundedIcon sx={{ fontSize: 30, color: 'white' }} />
+                <p style={{ margin: 0, fontSize: '17px', marginTop: 5, color: 'white' }}>Eventos</p>
+              </div>
+            </Badge>
+          </IconButton>
+          <IconButton>
+            <Badge color="error">
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <AppRegistrationRoundedIcon sx={{ fontSize: 30, color: 'white' }} />
+                <p style={{ margin: 0, fontSize: '17px', marginTop: 5, color: 'white' }}>Recursos</p>
+              </div>
+            </Badge>
+          </IconButton>
+          <IconButton>
+            <Badge badgeContent={4} color="error">
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <MessageIcon sx={{ fontSize: 30, color: 'white' }} />
+                <p style={{ margin: 0, fontSize: '17px', marginTop: 5, color: 'white' }}>Mensagens</p>
+              </div>
+            </Badge>
+          </IconButton>
+
+          <IconButton>
+            <Badge badgeContent={17} color="error">
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <NotificationsIcon sx={{ fontSize: 30, marginBottom: 0, color: 'white'}} />
+                <p style={{ margin: 0, fontSize: '17px', marginTop: 5, color: 'white' }}>Notificações</p>
+              </div>
+            </Badge>
+          </IconButton>
+
+          <IconButton>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <AccountCircle sx={{ fontSize: 35 }} />
-              <p style={{ margin: 0, marginTop: 0, fontSize: '17px' }}>Perfil</p>
+              <AccountCircle sx={{ fontSize: 30, color: 'white' }} />
+              <p style={{ margin: 0, fontSize: '17px', marginTop: 5, color: 'white' }}>Perfil</p>
             </div>
-            </IconButton>
+          </IconButton>
+        </div>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" }}}>
             <IconButton
